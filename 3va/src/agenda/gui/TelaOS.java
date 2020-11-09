@@ -186,10 +186,12 @@ public class TelaOS extends JDialog {
 		btnSalvar.setBounds(186, 527, 89, 23);
 		getContentPane().add(btnSalvar);
 
-		JButton btnCancelar = new JButton("Cancelar");
+		JButton btnCancelar = new JButton("Voltar");
 		btnCancelar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				MenuPrincipal btVoltar = new MenuPrincipal();
 				dispose();
+				btVoltar.setVisible(true);
 
 			}
 		});
