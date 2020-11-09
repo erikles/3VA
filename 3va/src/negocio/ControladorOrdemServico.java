@@ -1,4 +1,7 @@
 package negocio;
+import java.util.List;
+
+import entidades.Cliente;
 import entidades.OrdemServico;
 import repositorios.RepositorioOrdemServico;
 
@@ -19,6 +22,9 @@ public class ControladorOrdemServico {
 	public boolean inserir(OrdemServico ordemServico) {
     	return reOS.inserir(ordemServico);
     }
+	public List<OrdemServico> localizarTodos() {
+		return reOS.localizarTodos();
+	} 
 		
 	
 }

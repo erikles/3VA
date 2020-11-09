@@ -69,8 +69,14 @@ public class MenuPrincipal extends JFrame {
 		
 		
 		JButton btnListarClientes = new JButton("Listar Clientes");
+		btnListarClientes.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				TelaListaUsuarios telaLU = new TelaListaUsuarios();
+				telaLU.setVisible(true);
+			}
+		});
 		btnListarClientes.setFont(new Font("Product Sans", Font.BOLD, 12));
-		btnListarClientes.setBounds(77, 77, 168, 55);
+		btnListarClientes.setBounds(24, 143, 118, 23);
 		panel.add(btnListarClientes);
 		
 		JButton btnAgendarServico = new JButton("Agendar Servi\u00E7o");
@@ -78,23 +84,36 @@ public class MenuPrincipal extends JFrame {
 		btnAgendarServico.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {//Mudar para tela da ordem de servi
 				TelaOS telaOS = new TelaOS();
-				telaOS.setVisible(true); ;
+				dispose();
+				telaOS.setVisible(true);
 			}
 		});
 		
-		btnAgendarServico.setBounds(77, 141, 168, 55);
+		btnAgendarServico.setBounds(77, 77, 168, 55);
 		panel.add(btnAgendarServico);
+		
+		JButton btnListarServicos = new JButton("Listar Servi\u00E7os");
+		btnListarServicos.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				TelaListaServico telaLR = new TelaListaServico();
+				dispose();
+				telaLR.setVisible(true);
+			}
+		});
+		btnListarServicos.setFont(new Font("Product Sans", Font.BOLD, 12));
+		btnListarServicos.setBounds(180, 143, 118, 23);
+		panel.add(btnListarServicos);
 		
 		
 		btnCadastroClientes.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				CadastroCliente cadCliente = new CadastroCliente();
+				dispose();
 				cadCliente.setVisible(true);
 			}
 		});
 		
 		frame.setVisible(true);
 	}
-
 }
 
