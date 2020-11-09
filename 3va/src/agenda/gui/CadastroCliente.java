@@ -33,9 +33,9 @@ public class CadastroCliente extends JDialog {
 	 */
 	public static void main(String[] args) {
 		try {
-			CadastroCliente dialog = new CadastroCliente();
-			dialog.setDefaultCloseOperation(JDialog.DISPOSE_ON_CLOSE);
-			dialog.setVisible(true);
+			CadastroCliente dial = new CadastroCliente();
+			dial.setDefaultCloseOperation(JDialog.DISPOSE_ON_CLOSE);
+			dial.setVisible(true);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
@@ -121,22 +121,14 @@ public class CadastroCliente extends JDialog {
 			contentPanel.add(buttonPane);
 			buttonPane.setLayout(new FlowLayout(FlowLayout.RIGHT));
 			{
-				JButton btnSalva = new JButton("Salvar");
-				btnSalva.addActionListener(new ActionListener() {
-					public void actionPerformed(ActionEvent e) {
-
-					}
-				});
-				btnSalva.setActionCommand("OK");
-				buttonPane.add(btnSalva);
-				getRootPane().setDefaultButton(btnSalva);
-			}
-			{
-				JButton cancelButton = new JButton("Cancel");
+				JButton cancelButton = new JButton("Voltar");
 				cancelButton.addActionListener(new ActionListener() {
 					public void actionPerformed(ActionEvent arg0) {
-						dispose();
+						MenuPrincipal telaPrincipal =  new MenuPrincipal();
+						dispose(); telaPrincipal.setVisible(true); 
+					
 					}
+					
 				});
 				cancelButton.setActionCommand("Cancel");
 				buttonPane.add(cancelButton);

@@ -106,9 +106,14 @@ public class TelaOS extends JDialog {
 		// Buscar o CPF e preencher os campos com dados do cliente
 		btnBuscarCpf.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
+				try {
 
-				cliente = ControladorCliente.getInstancia().localizar(txtCPF.getText());
-				lblResultNome.setText(cliente.getNome());
+					cliente = ControladorCliente.getInstancia().localizar(txtCPF.getText());
+					lblResultNome.setText(cliente.getNome());
+
+				} catch (Exception e) {
+					JOptionPane.showMessageDialog(null, "CPF não localizado");
+				}
 
 			}
 
@@ -156,16 +161,23 @@ public class TelaOS extends JDialog {
 		JButton btnSalvar = new JButton("Salvar");
 		btnSalvar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				try {
+					OrdemServico ordemS = new OrdemServico();
 
-				OrdemServico ordemS = new OrdemServico();
-
-				ordemS.setCliente(cliente);
-				ordemS.setValorTotal(Double.parseDouble(txtValorServico.getText()));
-				ordemS.setDataAgendamento(calendar.getDate());
-
-				if (ControladorOrdemServico.getInstancia().inserir(ordemS)) {
-					JOptionPane.showMessageDialog(null, "Cadastrado com sucesso!");
+					ordemS.setCliente(cliente);
+					ordemS.setValorTotal(Double.parseDouble(txtValorServico.getText()));
+					ordemS.setDataAgendamento(calendar.getDate());
+					
+					if (ControladorOrdemServico.getInstancia().inserir(ordemS)) {
+						JOptionPane.showMessageDialog(null, "Cadastrado com sucesso!");
+						}
+					
+				} catch (Exception e2) {
+					JOptionPane.showMessageDialog(null, "Ops! Algo deu errado...");
 				}
+				
+				
+
 			}
 
 		});
@@ -186,4 +198,3 @@ public class TelaOS extends JDialog {
 		getContentPane().add(btnCancelar);
 	}
 }
-

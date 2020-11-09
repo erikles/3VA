@@ -86,7 +86,8 @@ public class Login {
 		btnEntrar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				if(txtUsuario.getText().equals("admin") && passwordField.getText().equals("admin") ) {
-					JOptionPane.showMessageDialog(null, "Você entrou");	
+					JOptionPane.showMessageDialog(null, "Você entrou");
+					new MenuPrincipal().show();
 				} else {
 					JOptionPane.showMessageDialog(null, "Acesso negado");
 				}

@@ -96,9 +96,5 @@ public class MenuPrincipal extends JFrame {
 		frame.setVisible(true);
 	}
 
-	public void setVisible(boolean b) {
-		// TODO Auto-generated method stub
-		
-	}
 }
 
