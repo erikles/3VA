@@ -8,7 +8,7 @@ import com.toedter.calendar.JCalendar;
 
 public class OrdemServico {
 
-	private JCalendar DataAgendamento;
+	private Date DataAgendamento;
 	private Cliente cliente;
 	private double valorTotal;
 
@@ -16,7 +16,7 @@ public class OrdemServico {
 		super();
 	}
 
-	public OrdemServico( JCalendar dataAgendamento, Cliente cliente, double ValorTotal) {
+	public OrdemServico( Date dataAgendamento, Cliente cliente, double ValorTotal) {
 		super();
 		this.cliente = cliente;
 		this.DataAgendamento = dataAgendamento;
@@ -24,12 +24,14 @@ public class OrdemServico {
 
 
 	
-	public JCalendar getDataAgendamento() {
+
+
+	public Date getDataAgendamento() {
 		return DataAgendamento;
 	}
 
-	public void setDataAgendamento(JCalendar calendar) {
-		DataAgendamento = calendar;
+	public void setDataAgendamento(Date dataAgendamento) {
+		DataAgendamento = dataAgendamento;
 	}
 
 	public Cliente getCliente() {
