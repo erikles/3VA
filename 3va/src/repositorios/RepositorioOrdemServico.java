@@ -15,6 +15,8 @@ public class RepositorioOrdemServico {
 		}
 		return list;
 	}
+	
+
 
 	public boolean inserir(OrdemServico os) {
 		if(repoOS.add(os)) {
@@ -35,5 +37,6 @@ public class RepositorioOrdemServico {
 		osAtualizada.setCliente(os.getCliente());
 		
 	}
+	
 
 }

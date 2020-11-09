@@ -70,13 +70,14 @@ public class TelaListaServico extends JFrame {
 		
 		
 		JComboBox comboBox = new JComboBox();
-		comboBox.setBounds(37, 62, 298, 32);
+		comboBox.setFont(new Font("Tahoma", Font.PLAIN, 10));
+		comboBox.setBounds(0, 62, 374, 29);
 		panel.add(comboBox);
 		
 		comboBox.removeAllItems();
-		for (OrdemServico tabela : ControladorOrdemServico.getInstancia().localizarTodos()) {
-			tabela.toString();
-			comboBox.addItem(tabela);
+		for (OrdemServico tabelaServico : ControladorOrdemServico.getInstancia().localizarTodos()) {
+			tabelaServico.toString();
+			comboBox.addItem(tabelaServico);
 			
 		}
 		

@@ -1,8 +1,10 @@
 package entidades;
 
+import java.text.NumberFormat;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
+import java.util.Locale;
 
 import com.toedter.calendar.JCalendar;
 
@@ -21,10 +23,6 @@ public class OrdemServico {
 		this.cliente = cliente;
 		this.DataAgendamento = dataAgendamento;
 	}
-
-
-	
-
 
 	public Date getDataAgendamento() {
 		return DataAgendamento;
@@ -49,6 +47,13 @@ public class OrdemServico {
 
 	public void setValorTotal(double valorTotal) {
 		this.valorTotal = valorTotal;
+	}
+	
+
+	@Override
+	public String toString() {
+		return "Data: " + DataAgendamento.getDay() +"/"+ (DataAgendamento.getMonth()+1) +
+				" Cliente= " + cliente.getNome() + ", Valor= R$"+ getValorTotal();
 	}
 
 	

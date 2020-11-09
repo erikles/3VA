@@ -76,8 +76,7 @@ public class TelaListaUsuarios extends JFrame {
 		
 		comboBox.removeAllItems();
 		for (Cliente tabela : ControladorCliente.getInstancia().localizarTodos()) {
-			tabela.toString();
-			comboBox.addItem(tabela);
+			comboBox.addItem(tabela.toString());
 			
 		}
 		

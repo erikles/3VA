@@ -1,6 +1,5 @@
 package agenda.gui;
 
-
 import java.awt.FlowLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -98,21 +97,26 @@ public class CadastroCliente extends JDialog {
 		btnNewButton_1_1.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 
-				Cliente cliente = new Cliente();
-				cliente.setNome(txtNome.getText());
-				cliente.setCpf(txtCPF.getText());
-				cliente.setRg(txtRG.getText());
+				if (txtNome == null || txtCPF == null || txtRG == null) {
+					JOptionPane.showMessageDialog(null, "Ops! Algo está faltando...");
+				} else {
 
-				if (ControladorCliente.getInstancia().inserir(cliente)) {
-					JOptionPane.showMessageDialog(null, "Cadastrado com sucesso!");
-					txtNome.setText("");
-					txtCPF.setText("");
-					txtRG.setText("");
+					Cliente cliente = new Cliente();
+					cliente.setNome(txtNome.getText());
+					cliente.setCpf(txtCPF.getText());
+					cliente.setRg(txtRG.getText());
+					if (ControladorCliente.getInstancia().inserir(cliente)) {
+						JOptionPane.showMessageDialog(null, "Cadastrado com sucesso!");
+						txtNome.setText("");
+						txtCPF.setText("");
+						txtRG.setText("");
+
+					}
 
 				}
-
 			}
 		});
+
 		btnNewButton_1_1.setBounds(117, 11, 116, 32);
 		panel_1.add(btnNewButton_1_1);
 		{
@@ -124,11 +128,12 @@ public class CadastroCliente extends JDialog {
 				JButton cancelButton = new JButton("Voltar");
 				cancelButton.addActionListener(new ActionListener() {
 					public void actionPerformed(ActionEvent arg0) {
-						MenuPrincipal telaPrincipal =  new MenuPrincipal();
-						dispose(); telaPrincipal.setVisible(true); 
-					
+						MenuPrincipal telaPrincipal = new MenuPrincipal();
+						dispose();
+						telaPrincipal.setVisible(true);
+
 					}
-					
+
 				});
 				cancelButton.setActionCommand("Cancel");
 				buttonPane.add(cancelButton);
@@ -137,4 +142,3 @@ public class CadastroCliente extends JDialog {
 		}
 	}
 }
-
