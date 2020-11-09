@@ -54,32 +54,32 @@ public class Login {
 	private void initialize() {
 		frame = new JFrame();
 		frame.setResizable(false);
-		frame.setBounds(100, 100, 460, 300);
+		frame.setBounds(100, 100, 400, 300);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.getContentPane().setLayout(null);
 		
 		JLabel lblLogin = new JLabel("AGENDAMENTO DE SERVI\u00C7O\r\n");
 		lblLogin.setFont(new Font("Product Sans", Font.BOLD, 18));
-		lblLogin.setBounds(92, 33, 256, 55);
+		lblLogin.setBounds(72, 24, 256, 55);
 		frame.getContentPane().add(lblLogin);
 		
 		JLabel lblUsuario = new JLabel("Usu\u00E1rio:");
 		lblUsuario.setFont(new Font("Tahoma", Font.PLAIN, 14));
-		lblUsuario.setBounds(81, 100, 89, 28);
+		lblUsuario.setBounds(43, 86, 89, 28);
 		frame.getContentPane().add(lblUsuario);
 		
 		txtUsuario = new JTextField();
-		txtUsuario.setBounds(81, 128, 278, 26);
+		txtUsuario.setBounds(43, 116, 290, 26);
 		frame.getContentPane().add(txtUsuario);
 		txtUsuario.setColumns(10);
 		
 		JLabel lblSenha = new JLabel("Senha:");
 		lblSenha.setFont(new Font("Tahoma", Font.PLAIN, 14));
-		lblSenha.setBounds(81, 156, 89, 28);
+		lblSenha.setBounds(43, 142, 89, 28);
 		frame.getContentPane().add(lblSenha);
 		
 		passwordField = new JPasswordField();
-		passwordField.setBounds(81, 182, 278, 28);
+		passwordField.setBounds(43, 166, 290, 28);
 		frame.getContentPane().add(passwordField);
 		
 		JButton btnEntrar = new JButton("Entrar");
@@ -92,7 +92,7 @@ public class Login {
 				}
 			}
 		});
-		btnEntrar.setBounds(270, 219, 89, 23);
+		btnEntrar.setBounds(244, 209, 89, 23);
 		frame.getContentPane().add(btnEntrar);
 	}
 }

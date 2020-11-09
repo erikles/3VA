@@ -19,10 +19,6 @@ public class ControladorOrdemServico {
 	public boolean inserir(OrdemServico ordemServico) {
     	return reOS.inserir(ordemServico);
     }
-	
-	public int gerarID() {
-		return reOS.gerarIdOS();
-	}
 		
 	
 }
