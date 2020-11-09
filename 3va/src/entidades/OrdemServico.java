@@ -4,66 +4,33 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
-import entidades.Cliente;
+import com.toedter.calendar.JCalendar;
 
 public class OrdemServico {
 
-	private Date dataEntrada;
-	private Date dataSaida;
-	private Integer numOS;
-	private int statusServico;
+	private JCalendar DataAgendamento;
 	private Cliente cliente;
 	private double valorTotal;
-	private String descricao;
-	
-	
-	
 
 	public OrdemServico() {
 		super();
 	}
 
-	public OrdemServico(String descricao, Date dataEntrada, Date dataSaida, Integer numOS, int statusServico, Cliente cliente) {
-		this.dataEntrada = dataEntrada;
-		this.dataSaida = dataSaida;
-		this.numOS = numOS;
-		this.statusServico = statusServico;
+	public OrdemServico( JCalendar dataAgendamento, Cliente cliente, double ValorTotal) {
+		super();
 		this.cliente = cliente;
-		this.descricao = descricao;
+		this.DataAgendamento = dataAgendamento;
 	}
 
-	public Date getDataEntrada() {
-		return dataEntrada;
+
+	
+	public JCalendar getDataAgendamento() {
+		return DataAgendamento;
 	}
 
-	public void setDataEntrada(Date dataEntrada) {
-		this.dataEntrada = dataEntrada;
+	public void setDataAgendamento(JCalendar calendar) {
+		DataAgendamento = calendar;
 	}
-
-	public Date getDataSaida() {
-		return dataSaida;
-	}
-
-	public void setDataSaida(Date dataSaida) {
-		this.dataSaida = dataSaida;
-	}
-
-	public Integer getNumOS() {
-		return numOS;
-	}
-
-	public void setNumOS(Integer numOS) {
-		this.numOS = numOS;
-	}
-
-	public int getStatusServico() {
-		return statusServico;
-	}
-
-	public void setStatusServico(int statusServico) {
-		this.statusServico = statusServico;
-	}
-
 
 	public Cliente getCliente() {
 		return cliente;
@@ -72,13 +39,7 @@ public class OrdemServico {
 	public void setCliente(Cliente cliente) {
 		this.cliente = cliente;
 	}
-
-
-
-	public void setMatricula(String text) {
-		// TODO Aretur
-		
-	}
+	
 
 	public double getValorTotal() {
 		return valorTotal;
@@ -87,15 +48,6 @@ public class OrdemServico {
 	public void setValorTotal(double valorTotal) {
 		this.valorTotal = valorTotal;
 	}
-
-	public String getDescricao() {
-		return descricao;
-	}
-
-	public void setDescricao(String descricao) {
-		this.descricao = descricao;
-	}
-
 
 	
 }
